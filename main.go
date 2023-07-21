@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/ibuilding-x/driver-box/driverbox"
 	"github.com/ibuilding-x/driver-box/driverbox/export"
-	"github.com/ibuilding-x/export-edgex/edgex"
+	"github.com/ibuilding-x/driverbox-edgex/edgex"
 	"os"
 )
 
