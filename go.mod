@@ -2,12 +2,10 @@ module github.com/ibuilding-x/driverbox-edgex
 
 go 1.19
 
-replace github.com/ibuilding-x/driver-box => /Users/zhengjw22mac123/GolandProjects/driver-box
-
 require (
 	github.com/edgexfoundry/device-sdk-go/v2 v2.3.1
 	github.com/edgexfoundry/go-mod-core-contracts/v2 v2.3.0
-	github.com/ibuilding-x/driver-box v0.0.0-00010101000000-000000000000
+	github.com/ibuilding-x/driver-box v0.0.0-20230721085705-04d353e4b19b
 	go.uber.org/zap v1.24.0
 )
 
