@@ -33,3 +33,4 @@ COPY --from=builder /build/driver-box /driver-box
 EXPOSE 59999
 
 ENTRYPOINT ["/driver-box"]
+CMD ["-cp=consul.http://edgex-core-consul:8500", "--registry", "--confdir=/res"]
