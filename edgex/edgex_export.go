@@ -270,14 +270,6 @@ func (s *EdgexExport) Stop(force bool) error {
 	if s.lc != nil {
 		s.lc.Debugf("Stop called: force=%v", force)
 	}
-	// 释放驱动资源
-	if helper.RunningPlugin != nil {
-		err := helper.RunningPlugin.Destroy()
-		if err != nil {
-			return err
-		}
-		helper.RunningPlugin = nil
-	}
 	return nil
 }
 
