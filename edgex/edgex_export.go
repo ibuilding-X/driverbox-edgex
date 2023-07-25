@@ -28,7 +28,7 @@ var once = &sync.Once{}
 
 const (
 	serviceName string = "driver-box"
-	version     string = "0.1"
+	version     string = "0.1.0"
 )
 
 var noticeClient interfaces.NotificationClient
