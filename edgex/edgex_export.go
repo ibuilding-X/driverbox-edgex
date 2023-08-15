@@ -151,6 +151,7 @@ func (s *EdgexExport) Initialize(lc logger.LoggingClient, asyncCh chan<- *sdkMod
 
 	lc.Infof("DriverConfig config is: %v", s.serviceConfig.DriverConfig)
 	helper.DriverConfig = s.serviceConfig.DriverConfig
+	helper.DeviceShadow.SetDeviceTTL(s.serviceConfig.DriverConfig.DefaultDeviceTTL)
 
 	// 异步延迟初始化
 	// 1. 防止服务未注册
