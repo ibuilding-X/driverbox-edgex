@@ -88,16 +88,6 @@ func (export *EdgexExport) ExportTo(deviceData plugin.DeviceData) {
 			helper.Logger.Warn("unknown point", zap.Any("deviceName", deviceData.DeviceName), zap.Any("pointName", point.PointName))
 			continue
 		}
-		// 缓存比较
-		shadowValue, _ := helper.DeviceShadow.GetDevicePoint(deviceData.DeviceName, point.PointName)
-		if shadowValue == point.Value {
-			helper.Logger.Debug("point value = cache, stop sending to messageBus")
-			continue
-		}
-		// 缓存
-		if err := helper.DeviceShadow.SetDevicePoint(deviceData.DeviceName, point.PointName, point.Value); err != nil {
-			helper.Logger.Error("shadow store point value error", zap.Error(err), zap.Any("deviceName", deviceData.DeviceName))
-		}
 		// 点位类型转换
 		pointValue, err := helper.ConvPointType(point.Value, cachePoint.ValueType)
 		if err != nil {
